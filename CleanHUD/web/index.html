@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info HUD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anta&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hud-container">
+        <div class="hud-item" id="job">
+            <i class="fas fa-briefcase hud-icon"></i>
+            <span id="job-text" class="hud-text">Police - Chief</span>
+        </div>
+        <div class="hud-item" id="server-id">
+            <i class="fas fa-id-card hud-icon"></i>
+            <span id="id-text" class="hud-text">ID: 69</span>
+        </div>
+        <div class="hud-item" id="bank-money">
+            <i class="fass fa-building-columns hud-icon"></i>
+            <span id="bank-text" class="hud-text">$5000</span>
+        </div>
+        <div class="hud-item" id="money">
+            <i class="fasds fa-money-bills hud-icon"></i>
+            <span id="money-text" class="hud-text">$1000</span>
+        </div>
+    </div>
+
+    <div class="gear-container">
+        <div class="hud-item" id="gearMode">
+            <i class="fas fa-gear hud-icon"></i>
+            <span id="gearMode-text" class="hud-text">Mode: </span>
+        </div>
+    </div>
+
+    <div class="fuel-container">
+        <div class="fuel-item" id="fuel">
+            <i class="fas fa-gas-pump hud-icon"></i>
+            <span id="fuel-text" class="hud-text">100%</span>
+        </div>
+    </div>
+
+    <div class="status-container">
+        <div class="status-item" id="health">
+            <i class="fass fa-heart-pulse status-icon"></i>
+            <span id="health-text" class="status-text">100</span>
+        </div>
+        <div class="status-item" id="armor">
+            <i class="fad fa-shield-halved status-icon"></i>
+            <span id="armor-text" class="status-text">100</span>
+        </div>
+        <div class="status-item" id="stamina">
+            <i class="fas fa-bolt status-icon"></i>
+            <span id="stamina-text" class="status-text">100</span>
+        </div>
+        <div class="status-item" id="oxygen">
+            <i class="fas fa-lungs status-icon"></i>
+            <span id="oxygen-text" class="status-text">100</span>
+        </div>
+        <div class="status-item" id="hunger">
+            <i class="fas fa-utensils status-icon"></i>
+            <span id="hunger-text" class="status-text">100</span>
+        </div>
+        <div class="status-item" id="thirst">
+            <i class="fas fa-glass-water-droplet status-icon"></i>
+            <span id="thirst-text" class="status-text">100</span>
+        </div>
+        <div class="status-item" id="stress">
+            <i class="fas fa-brain status-icon"></i>
+            <span id="stress-text" class="status-text">100</span>
+        </div>
+    </div>
+    <div class="speed-display">
+        <span id="speed-text">000</span>
+        <span class="kmh-unit">KM/H</span>
+    </div>
+
+    <div class="rpm-bar-container">
+        <div class="rpm-bar" id="rpm-bar"></div>
+    </div>
+
+    <div class="vehicle-icons">
+        <div class="transmission-item" id="seatbelt">
+            <i class="fas fa-user transmission-icon"></i>
+        </div>
+        <div class="vehicle-icon-container">
+            <i id="body-icon" class="fas fa-car"></i>
+            <div id="body-bar" class="mini-bar"></div>
+        </div>
+        <div class="vehicle-icon-container">
+            <i id="engine-icon" class="fas fa-engine"></i>
+            <div id="engine-bar" class="mini-bar"></div>
+        </div>
+    </div>
+
+    <div class="transmission-container">
+        <div class="transmission-item" id="transmission">
+            <i class="fas fa-cogs transmission-icon"></i>
+            <span id="transmission-text" class ="transmission-text">  N</span>
+        </div>
+    </div>
+
+    <div class="rpm-container">
+        <div class="rpm-item" id="rpm">
+            <i class="fas fa-tachometer-alt rpm-icon"></i>
+            <span id="rpm-text" class="rpm-text">1987 RPM</span>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html

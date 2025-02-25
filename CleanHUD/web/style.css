@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Anta", serif;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    color: #f8f9fa;
+}
+
+.speed-display {
+    position: absolute;
+    bottom: 90px;
+    right: 75px; /* Start from the right */
+    transform: translateX(0);
+    font-family: "Anta", serif;
+    font-size: 80px;
+    color: #f8f9fa;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    display: none;
+}
+.kmh-unit {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+/* RPM Bar */
+.rpm-bar-container {
+    position: absolute;
+    bottom: 4.5%;
+    right: 10px; /* Start from the right */
+    transform: translateX(0);
+    width: 320px;
+    height: 10px;
+    background:#8282821a;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+}
+.rpm-bar {
+    height: 100%;
+    width: 0%; /* Initial width set to 0 */
+    background: #94d82d; /* Default color */
+    transition: width 0.1s linear, background 0.2s linear;
+}
+
+/* Health & Engine Icons */
+.vehicle-icons {
+    position: absolute;
+    bottom: 65px;
+    right: 10px; /* Start from the right */
+    display: none;
+    flex-direction: column;  /* Stack icons vertically */
+    gap: 12px;               /* Adjust gap between icons and bars */
+    align-items: right;     /* Align items to the right */
+}
+.vehicle-icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;  /* Stack the icon and the bar vertically */
+    align-items: left;     /* Align items to the left */
+}
+.vehicle-icons i {
+    font-size: 30px;
+    transition: color 0.2s;
+}
+
+.mini-bar {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 5px;
+    height: 0px; /* Initial height */
+    max-height: 30px; /* Set max height to 30px */
+    background: #94d82d; /* Default color */
+    border-radius: 2px;
+    transition: height 0.2s linear, background 0.2s linear;
+}
+
+.rpm-container {
+    position: absolute;
+    bottom: 65px;
+    right: 70px; /* Start from the right */
+    display: none; /* Initially hidden */
+    flex-direction: column-reverse;
+    gap: 8px;
+    align-items: end;
+}
+.rpm-item {
+    background-color: #8282821a;
+    padding: 8px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: block;
+    align-items: end;
+    gap: 8px;
+    width: fit-content;
+}
+.rpm-icon {
+    width: 18px;
+    height: 18px;
+}
+.rpm-text {
+    font-size: 16px;
+    color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Transmission Info */
+.transmission-container {
+    position: absolute;
+    bottom: 65px;
+    right: 280px;
+    display: none;
+    flex-direction: row-reverse;
+    gap: 5px;
+    align-items: end;
+    width: 45px;
+    height: 12px;
+}
+.transmission-item {
+    background-color: #8282821a;
+    padding: 8px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex; /* Ensure alignment of icon and text */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+
+}
+.transmission-icon {
+    width: 16px;
+    height: 16px;
+}
+.transmission-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f8f9fa; /* Default color */
+}
+.transmission-text.neutral { color: #94d82d; } /* N */
+.transmission-text.reverse { color: #e03131; } /* R */
+.transmission-item#seatbelt {
+    display: flex;
+    align-items: start;
+    gap: 6px;
+    background-color: #8282821a;
+    padding: 9px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.transmission-item#seatbelt i {
+    font-size: 20px;
+    color: #e03131; /* Default color when off */
+    transition: color 0.3s ease;
+}
+.transmission-item#seatbelt.on i { color: #f8f9fa; }
+.transmission-item#seatbelt.off i { color: #e03131; }
+
+.hud-container {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+.hud-item {
+    background-color: #8282821a;
+    padding: 8px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+.hud-icon {
+    width: 18px;
+    height: 18px;
+}
+.hud-text {
+    flex-grow: 1;
+    text-align: right;
+    font-size: 15px;
+}
+
+.fuel-container {
+    position: absolute;
+    bottom: 65px;
+    right: 193px;
+    display: none; /* Initially hidden */
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-end;
+}
+.fuel-item {
+    background-color: #8282821a;
+    padding: 8px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+
+.gear-container {
+    position: absolute;
+    bottom: 270px;
+    left: 15px;
+    display: none; /* Initially hidden */
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.status-container {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex; /* Display status info row by row */
+    gap: 8px;
+    align-items: flex-end;
+}
+.status-item {
+    background-color: #8282821a;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.status-icon {
+    width: 18px;
+    height: 18px;
+}
+.status-text {
+    flex-grow: 1;
+    text-align: right;
+    font-size: 18px;
+}
